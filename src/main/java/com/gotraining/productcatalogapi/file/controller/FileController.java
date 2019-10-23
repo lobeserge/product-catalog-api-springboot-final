@@ -20,6 +20,7 @@ import com.gotraining.productcatalogapi.file.payload.UploadFileResponse;
 import com.gotraining.productcatalogapi.service.ProductService;
 
 @RestController
+@CrossOrigin
 public class FileController {
 
 	@Autowired
