@@ -58,7 +58,6 @@ public class Category {
 
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "category")
-	@JsonIgnore
 	private List<Product> productlist;
 	
 	public List<Product> getProductlist() {
