@@ -12,6 +12,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import io.swagger.annotations.ApiModelProperty;
+
 
 @Entity
 public class Category {
@@ -40,6 +42,7 @@ public class Category {
 		this.categoryname = categoryname;
 	}
 
+	@ApiModelProperty(hidden = true)
 	public int getCategoryid() {
 		return categoryid;
 	}

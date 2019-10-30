@@ -18,6 +18,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.gotraining.productcatalogapi.file.model.DBFile;
 import com.gotraining.productcatalogapi.file.payload.UploadFileResponse;
 
+import io.swagger.annotations.ApiModelProperty;
+
 @Entity
 public class Product {
 	
@@ -29,8 +31,6 @@ private String productname;
 private long quantity;
 private long price;
 String image_uri;
-
-
 
 
 
@@ -57,7 +57,7 @@ public Product(int productid) {
 	super();
 	this.productid = productid;
 }
-
+@ApiModelProperty(hidden = true)
 public int getProductid() {
 	return productid;
 }
@@ -103,7 +103,7 @@ public void setPrice(long price) {
 @ManyToOne(fetch=FetchType.LAZY)
 private Category category;
 
-
+@ApiModelProperty(hidden = true)
 public Category getCategory() {
 	return new Category(getCategoryId(),getCategoryName());
 }
@@ -123,6 +123,7 @@ public Product setCategory(Category category) {
 	return this;
 }
 
+@ApiModelProperty(hidden = true)
 public String getImage_uri() {
 	return image_uri;
 }
